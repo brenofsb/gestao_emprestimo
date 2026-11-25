@@ -1,7 +1,7 @@
 package centro;
-import usuario.*;
 import equipamentos.*;
-import carga.*;;
+import usuarios.*;
+import carga.*;
 
 public class CentroRecursos {
     
