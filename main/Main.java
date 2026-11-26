@@ -192,6 +192,7 @@ public class Main {
             double carga = lerDouble();
 
             BateriaPortatil bateria = new BateriaPortatil(codigo, carga);
+            centro.cadastBateria(bateria);
 
             // Exibir dados da bateria cadastrada
             System.out.println("Bateria criada: " + bateria.cCodigo());

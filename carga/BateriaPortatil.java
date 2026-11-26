@@ -7,8 +7,12 @@ public class BateriaPortatil implements Carregavel {
     private double carga;
 
     public BateriaPortatil(String codigo, double carga) throws CentroRecursosException{
-        if (carga < 0 || carga > 100){
-            throw new CentroRecursosException("A carga inicial deve ser entre 0 e 100 porcento");
+        if (codigo == null || codigo.isBlank()){
+            throw new CentroRecursosException("O codigo da bateria nao pode ser vazio");
+        }
+
+        if (Double.isNaN(carga) || carga < 0 || carga > 100){
+            throw new CentroRecursosException("A carga inicial deve ser entre 0 e 100 por cento");
         }
         
         this.codigo = codigo;
@@ -42,7 +46,7 @@ public class BateriaPortatil implements Carregavel {
 
     @Override 
     public void altCargaPercent(double p) throws CentroRecursosException{
-        if (p < 0 || p > 100 || p > carga){
+        if (Double.isNaN(p) || p < 0 || p > 100 || p > carga){
             throw new CentroRecursosException("O percentual deve estar entre 0 e a carga atual");
         }
 
