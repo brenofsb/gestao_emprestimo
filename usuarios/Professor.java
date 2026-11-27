@@ -16,7 +16,7 @@ public class Professor extends Usuario{
     }
 
     public void setDepartamento(String departamento) throws CentroRecursosException {
-        if (departamento == null || departamento.trim().isEmpty()) {
+        if (departamento == null) {
             throw new CentroRecursosException("O departamento não pode ser vazio.");
         }
         this.departamento = departamento.trim();
