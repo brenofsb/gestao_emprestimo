@@ -22,12 +22,13 @@ public class CameraDigital extends Equipamento implements Carregavel {
             throw new CentroRecursosException("carga fora do Limite(de 0 a 100)");
         }
     }
-    public static int alterarPrazo(int novoPrazo)throws CentroRecursosException{
-        if (novoPrazo <=0){
-            throw new CentroRecursosException("adicione um novo prazo válido(Numeros inteiros e positivos");
+
+    public static void alterarPrazo(int novoPrazo) throws CentroRecursosException {
+        if (novoPrazo <= 0) {
+            throw new CentroRecursosException("adicione um novo prazo válido(Numeros inteiros e positivos)");
         }
         prazo = novoPrazo;
-        return prazo;
+
     }
 
     public static int consultarPrazo() {
@@ -40,7 +41,7 @@ public class CameraDigital extends Equipamento implements Carregavel {
             throw new CentroRecursosException("a carga não é suficiente pra emprestar");
         }
         if (!cartaoInstalado) {
-            throw new CentroRecursosException("O carão não esta intalado");
+            throw new CentroRecursosException("O cartão não esta instalado");
         }
 
     }
@@ -64,7 +65,7 @@ public class CameraDigital extends Equipamento implements Carregavel {
             return 0;
         }
         double intervalos = Math.ceil(faltam / taxaDeCarga);
-        int intervaloInteiro = (int) intervalos*2;
+        int intervaloInteiro = (int) intervalos * 2;
         return intervaloInteiro;
     }
 
